@@ -31,21 +31,12 @@ const Estabelecimento = sequelize.define('Estabelecimento', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    usuarioId: {
-        field: 'usuario_id',
-        type: DataTypes.INTEGER,
-        references: {
-            model: Usuario,
-            key: 'id'
-        }
-    }
 }, {
     createdAt: false,
     updatedAt: false,
 });
 
-Avaliacao.belongsTo(Estabelecimento, { foreignKey: 'id_estabelecimento' });
 Servico.belongsTo(Estabelecimento, { foreignKey: 'id_estabelecimento' });
-Estabelecimento.belongsTo(Usuario, { foreignKey: 'id_usuario' });
+
 
 module.exports = Estabelecimento

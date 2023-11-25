@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.get('/api/cliente/:id', authMiddleware, controller.PegarUmCliente)
 router.get('/api/clientes', authMiddleware, controller.PegarTodosCliente)
-router.post('/api/cliente', authMiddleware, controller.AddCliente)
+router.post('/api/cliente', controller.AddCliente)
 router.put('/api/cliente/:id', authMiddleware, controller.UpdateCliente)
 router.delete('/api/cliente/:id', authMiddleware, controller.DeletarCliente)
 
