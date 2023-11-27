@@ -1,28 +1,28 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../database.js')
-const Cliente = require("../models/Cliente")
-const Estabelecimento = require("../models/Estabelecimento")
+const Usuario = require("./Usuario")
+const Estabelecimento = require("./Estabelecimento")
 
-const Avaliacao = sequelize.define('Avaliacoes', {
+const Funcionario = sequelize.define('Funcionario', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
     },
-    comentario: {
+    nome: {
         type: DataTypes.STRING,
-        allowNull: true,
-    },
-    nota: {
-        type: DataTypes.DECIMAL(8, 2),
         allowNull: false,
     },
-    clienteId: {
-        field: 'cliente_id',
+    telefone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    usuarioId: {
+        field: 'usuario_id',
         type: DataTypes.INTEGER,
         references: {
-            model: Cliente,
+            model: Usuario,
             key: 'id'
         }
     },
@@ -37,7 +37,9 @@ const Avaliacao = sequelize.define('Avaliacoes', {
 }, {
     createdAt: false,
     updatedAt: false,
-});
+})
 
+Funcionario.belongsTo(Usuario, { foreignKey: 'usuario_id' })
+Funcionario.belongsTo(Estabelecimento, { foreignKey: 'estabelecimento_id' })
 
-module.exports = Avaliacao
+module.exports = Funcionario

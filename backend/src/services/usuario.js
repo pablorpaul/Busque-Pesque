@@ -4,8 +4,8 @@ const RepositorioUsuario = require('../repositories/usuario')
 const repositorio = new RepositorioUsuario
 
 class ServicoUsuario {
-    async PegarUmUsuario( id, transaction ) {
-        return repositorio.PegarUmUsuario( id, transaction )
+    async PegarUmPorEmail( id, transaction ) {
+        return repositorio.PegarUmPorEmail( id, transaction )
     }
 
     async PegarTodosUsuario() {
@@ -17,7 +17,7 @@ class ServicoUsuario {
             throw new Error("Favor preencher o email.")
         } else if(!usuario.senha) {
             throw new Error("Favor preencher o senha.")
-        } else if(permissao) {
+        } else if(!permissao) {
             throw new Error("Favor preencher o permissao.")
         }
   

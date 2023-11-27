@@ -3,7 +3,7 @@ const sequelize = require('../database.js')
 const Cliente = require("../models/Cliente")
 const Avaliacao = require("../models/avaliacao")
 
-const Usuario = sequelize.define('Usuarios', {
+const Usuario = sequelize.define('Usuario', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

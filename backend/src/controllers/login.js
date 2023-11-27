@@ -1,5 +1,5 @@
-const ServicoLogin = require('../services/login')
-const servico = new ServicoLogin()
+const ServicoUsuario = require('../services/usuario')
+const servico = new ServicoUsuario()
 
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')

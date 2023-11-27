@@ -1,4 +1,6 @@
 const ServicoCliente = require('../services/cliente')
+const ServicoUsuario = require('../services/usuario')
+const servicoU = new ServicoUsuario()
 const servico = new ServicoCliente()
 
 class ControllerCliente{
@@ -27,11 +29,8 @@ class ControllerCliente{
     }
     async AddCliente(req, res){
         try {
-            if(req.session.permissao != 1){
-                throw new Error("Permissão negada")
-            }
             const { usuario } = req.body
-            const user = await servico.AdicionarUsuario(usuario)
+            const user = await servicoU.AdicionarUsuario(usuario, 3)
             const result = await servico.AddCliente(req.body.cliente, user.id)
             res.status(200).json({ 
                 Cliente: result

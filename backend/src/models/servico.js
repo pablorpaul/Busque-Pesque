@@ -1,33 +1,33 @@
 const { DataTypes } = require('sequelize')
-const conexao = require('../database.js')
-const Usuario = require("../models/Usuario")
+const sequelize = require('../database.js')
+const Estabelecimento = require("./Estabelecimento")
 
-const Cliente = conexao.define('Cliente', {
+const Servico = sequelize.define('Servico', {
     id: {
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        type: DataTypes.INTEGER
+        allowNull: false,
     },
     nome: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
-    telefone: {
+    descricao: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
-    usuarioId: {
-        field: 'usuario_id',
+    estabelecimentoId: {
+        field: 'estabelecimento_id',
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: Estabelecimento,
             key: 'id'
         }
     }
 }, {
     createdAt: false,
     updatedAt: false,
-})
+});
 
-module.exports = Cliente
+module.exports = Servico

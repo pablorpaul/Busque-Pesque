@@ -1,4 +1,4 @@
-const Servico = require('../models/Servicos')
+const Servico = require('../models/Servico')
 
 class RepositorioServico {
     
