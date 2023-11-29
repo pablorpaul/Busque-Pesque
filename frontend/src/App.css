@@ -1,0 +1,36 @@
+#root {
+  background-color: #3f72af;
+  height: 100vh;
+}
+
+.header .nav-link {
+  color: #3f72af !important;
+}
+
+.header .dropdown-menu {
+  background-color: #3f72af;
+}
+
+.header .dropdown-item:hover {
+  color: #3f72af !important;
+  background-color: #ffffff;
+}
+
+.btn-criar-conta {
+  color: #3f72af;
+  border: 1px solid #3f72af;
+}
+
+.btn-criar-conta:hover {
+  color: #ffffff;
+  background-color: #3f72af;
+}
+
+.btn-login {
+  color: #ffffff;
+  background-color: #3f72af;
+}
+
+.btn-login:hover {
+  background-color: #2c5483;
+}
