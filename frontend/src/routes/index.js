@@ -1,11 +1,15 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Body from './../components/Body';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Body from "./../components/Body";
+import CadastrarServico from "./../screens/CadastrarServicoScreen";
+import EditarServico from "./../screens/EditarServicoScreen";
 
 export default function RouterRoot() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Body />} path="/"></Route>
+        <Route element={<CadastrarServico />} path="cadastrarservico/"></Route>
+        <Route element={<EditarServico />} path="editarservico/"></Route>
       </Routes>
     </BrowserRouter>
   );
