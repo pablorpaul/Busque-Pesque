@@ -10,7 +10,7 @@ class RepositorioEstabelecimento {
             });
     
             if (!estabelecimento) {
-                throw new Error('estabelecimento não encontrado não encontrado')
+                throw new Error('estabelecimento não encontrado')
             }
             return estabelecimento
         }catch (error) {
@@ -22,14 +22,14 @@ class RepositorioEstabelecimento {
         return Estabelecimento.findAll()
     }
 
-    async AddEstabelecimento(Estabelecimento, transaction) {
-        const result = await Estabelecimento.create(Estabelecimento, transaction )
+    async AddEstabelecimento(estabelecimento, transaction) {
+        const result = await Estabelecimento.create(estabelecimento, transaction )
 
         return result
     }
 
-    async UpdateEstabelecimento(id, Estabelecimento) {
-        await Estabelecimento.update(Estabelecimento, {
+    async UpdateEstabelecimento(id, estabelecimento) {
+        await Estabelecimento.update(estabelecimento, {
             where: {
                 id
             }
@@ -39,7 +39,7 @@ class RepositorioEstabelecimento {
         })
     }
 
-    async DeleteEstabelecimento(id) {
+    async DeletarEstabelecimento(id) {
         return Estabelecimento.destroy({
             where: { id }
         });
