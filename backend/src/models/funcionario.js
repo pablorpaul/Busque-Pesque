@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../database.js')
-const Usuario = require("./Usuario")
-const Estabelecimento = require("./Estabelecimento")
+const Usuario = require("./usuario")
+const Estabelecimento = require("./estabelecimento")
 
 const Funcionario = sequelize.define('Funcionario', {
     id: {
@@ -39,7 +39,6 @@ const Funcionario = sequelize.define('Funcionario', {
     updatedAt: false,
 })
 
-Funcionario.belongsTo(Usuario, { foreignKey: 'usuario_id' })
-Funcionario.belongsTo(Estabelecimento, { foreignKey: 'estabelecimento_id' })
+
 
 module.exports = Funcionario

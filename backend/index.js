@@ -4,6 +4,7 @@ const RouterCliente = require('./src/routes/cliente.js')
 const RouterUsuario = require('./src/routes/usuario.js')
 const RouterLogin = require('./src/routes/login.js')
 const RouterEstabelecimento = require('./src/routes/estabelecimento.js')
+const RouterFuncionario = require('./src/routes/funcionario.js')
 
 const app = express()
 const port = 3000
@@ -14,6 +15,7 @@ app.use(RouterCliente)
 app.use(RouterUsuario)
 app.use(RouterLogin)
 app.use(RouterEstabelecimento)
+app.use(RouterFuncionario)
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`)

@@ -31,7 +31,7 @@ class ServicoEstabelecimento {
 
     async UpdateEstabelecimento(id, estabelecimento) {
         if(!id) {
-            throw new Error('Não foi enviada o identificador do cliente para alterar');
+            throw new Error('Não foi enviada o identificador do estabelecimento para alterar');
         } 
         this.VerficarEstabelecimento(estabelecimento)
 

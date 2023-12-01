@@ -1,48 +1,48 @@
-const Funcionarios = require('../models/funcionarios')
+const Funcionario = require('../models/funcionario')
 
-class RepositorioFuncionarios {
+class RepositorioFuncionario {
     
     async PegarUmFuncionario( id, transaction) {
         try {
-            const Funcionarios = await Funcionarios.findOne({
+            const funcionario = await Funcionario.findOne({
                 where: { id },
                 transaction
             });
     
-            if (!Funcionarios) {
-                throw new Error('Funcionarios não encontrado')
+            if (!funcionario) {
+                throw new Error('Funcionario não encontrado')
             }
-            return Funcionarios
+            return funcionario
         }catch (error) {
             console.log('Erro no repositorio', error)
-            res.status(500).json({ message: "Erro ao listar o nome do Funcionarios" })
+            res.status(500).json({ message: "Erro ao listar funcionario" })
         }
     }
-    async PegarTodosFuncionarios() {
-        return Funcionarios.findAll()
+    async PegarTodosFuncionario() {
+        return Funcionario.findAll()
     }
 
-    async AddFuncionario(Funcionarios, userid, transaction) {
-        const result = await Funcionarios.create({...Funcionarios, usuarioId: userid}, { transaction })
+    async AddFuncionario(funcionario, transaction) {
+        const result = await Funcionario.create({...funcionario}, { transaction })
 
         return result
     }
 
-    async UpdateFuncionario(id, Funcionarios) {
-        await Funcionarios.update(Funcionarios, {
+    async UpdateFuncionario(id, funcionario) {
+        await Funcionario.update(funcionario, {
             where: {
                 id
             }
         })
-        return Funcionarios.findOne({
+        return Funcionario.findOne({
             where: { id }
         })
     }
 
-    async DeleteFuncionario(id) {
-        return Funcionarios.destroy({
+    async DeletarFuncionario(id) {
+        return Funcionario.destroy({
             where: { id }
         });
     }
 }
-module.exports = RepositorioFuncionarios
+module.exports = RepositorioFuncionario
