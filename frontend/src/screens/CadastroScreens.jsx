@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import '../screens/LoginScreens';
+import './CadastroScreens';
 import Logo from '../../src/assets/images/logo.png';
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Cadastro = () => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleCadastro = () => {
     console.log('email:', email);
     console.log('Password:', password);
   };
@@ -19,7 +19,7 @@ const Login = () => {
                 <img src={Logo} alt="logo"/>
             </div>
             <div className="col-md-6">
-                <h1 className='h1 text-center'>Login</h1>
+                <h1 className='h1 text-center'>Cadastro</h1>
                 <form>
                     <div className='text-left'>
                         <h4>Email</h4>
@@ -44,14 +44,14 @@ const Login = () => {
                     </div>
                     <br />
                     <div className='text-center'>
-                        <button type="button" onClick={handleLogin}>
-                            Fazer Login
+                        <button type="button" onClick={handleCadastro}>
+                            Fazer Cadastro
                         </button>
                     </div>
                 </form>
                 <div className='text-center'>
                     <label>
-                        Ainda não tem uma conta? <Link to="cadastro/">Criar uma conta</Link>
+                        Japossui uma conta? <Link to="login/">Fazer Login</Link>
                     </label>
                 </div>
             </div>
@@ -60,4 +60,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Cadastro;
