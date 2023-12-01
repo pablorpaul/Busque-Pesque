@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import '../screens/LoginScreens';
-import Logo from '../../src/assets/images/logo.png';
+import logoB from '../../src/assets/images/logoB.png';
 import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setemail] = useState('');
-  const [password, setPassword] = useState('');
+  const [senha, setSenha] = useState('');
 
   const handleLogin = () => {
     console.log('email:', email);
-    console.log('Password:', password);
+    console.log('senha:', senha);
   };
 
   return (
     <div className="container d-flex flex-column justify-content-center vh-100">
         <div className="row">
             <div className="col-md-6 text-center">
-                <img src={Logo} alt="logo"/>
+                <img src={logoB} alt="logo" style={{ maxWidth: '100%', height: 'auto'}}/>
             </div>
             <div className="col-md-6">
                 <h1 className='h1 text-center'>Login</h1>
@@ -33,25 +33,25 @@ const Login = () => {
                     </div>
                     <br />
                     <div>
-                        <h4>Password</h4>
+                        <h4>Senha</h4>
                         <input 
-                            type="Password" 
+                            type="senha" 
                             className="form-control" 
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)} 
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)} 
                             placeholder="123456"
                         />
                     </div>
                     <br />
                     <div className='text-center'>
-                        <button type="button" onClick={handleLogin}>
+                        <button type="button" class="btn btn-primary" onClick={handleLogin}>
                             Fazer Login
                         </button>
                     </div>
                 </form>
                 <div className='text-center'>
                     <label>
-                        Ainda não tem uma conta? <Link to="cadastro/">Criar uma conta</Link>
+                        Ainda não tem uma conta? <Link to="/cadastro">Criar uma conta</Link>
                     </label>
                 </div>
             </div>

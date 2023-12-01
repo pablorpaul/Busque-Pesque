@@ -8,8 +8,8 @@ export default function RouterRoot() {
     <BrowserRouter>
       <Routes>
         <Route element={<Body />} path="/"></Route>
-        <Route element={<Login />} path="login/"></Route>
-        <Route element={<Cadastro />} path="cadastro/"></Route>
+        <Route element={<Login />} path="/login"></Route>
+        <Route element={<Cadastro />} path="/cadastro"></Route>
       </Routes>
     </BrowserRouter>
   );
