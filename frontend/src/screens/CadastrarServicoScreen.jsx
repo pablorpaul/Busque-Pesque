@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./CadastrarServicoScreen";
 import Logo from "../../src/assets/images/logo.png";
+import "../../src/screens/CadastrarServicoScreen.css";
 
 const CadastrarServico = () => {
   const [titulo, setTitulo] = useState("");
@@ -25,34 +26,36 @@ const CadastrarServico = () => {
         <div className="col-md-6">
           <h1 className="h1">Cadastrar Serviço</h1>
           <form>
-            <div className="campo">
-              <label>
-                Título:
-                <input
-                  type="text"
-                  value={titulo}
-                  onChange={(e) => setTitulo(e.target.value)}
-                />
-              </label>
-              <br />
+            <label>
+              Título:        
+              <input
+                type="text"
+                value={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
+              />
+            </label>
+            <br />
+            <label>
+              Descrição:
+              <input
+                type="text"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+              />
+            </label>
+            <br />
+            <div className="container">
+              <div className="text-start col-md-5">
+                <button type="button" onClick={handleLimparServico}>
+                  Limpar
+                </button>
+              </div>
+              <div className="text-end col-md-2">
+                <button type="button" onClick={handleCadastrarServico}>
+                  Salvar
+                </button>
+              </div>
             </div>
-            <div className="campo">
-              <label>
-                Descrição:
-                <input
-                  type="text"
-                  value={descricao}
-                  onChange={(e) => setDescricao(e.target.value)}
-                />
-              </label>
-              <br />
-            </div>
-            <button type="button" onClick={handleLimparServico}>
-              Limpar
-            </button>
-            <button type="button" onClick={handleCadastrarServico}>
-              Salvar
-            </button>
           </form>
         </div>
       </div>

@@ -7,9 +7,13 @@ export default function RouterRoot() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Body />} path="/"></Route>
-        <Route element={<CadastrarServico />} path="cadastrarservico/"></Route>
-        <Route element={<EditarServico />} path="editarservico/"></Route>
+        <Route element={<Body />} path="/">
+          <Route
+            element={<CadastrarServico />}
+            path="cadastrarservico/"
+          ></Route>
+          <Route element={<EditarServico />} path="editarservico/"></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
