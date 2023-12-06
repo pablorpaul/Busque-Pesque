@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../database.js')
-const Cliente = require("../models/Cliente")
+const Cliente = require("../models/cliente")
 const Avaliacao = require("../models/avaliacao")
+const Funcionario = require("../models/funcionario")
 
 const Usuario = sequelize.define('Usuario', {
     id: {
@@ -25,7 +26,7 @@ const Usuario = sequelize.define('Usuario', {
     createdAt: false,
     updatedAt: false,
 })
-Cliente.belongsTo(Usuario, { foreignKey: 'id_usuario' });
-Avaliacao.belongsTo(Cliente, { foreignKey: 'id_usuario' });
+
+
 
 module.exports = Usuario
