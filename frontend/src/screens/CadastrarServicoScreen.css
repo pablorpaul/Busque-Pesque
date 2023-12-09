@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.h1 {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding-left: 1%;
+}

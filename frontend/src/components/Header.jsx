@@ -1,11 +1,11 @@
-import Logo from '../../src/assets/images/logo.png';
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Logo from "../../src/assets/images/logo.png";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ notLogged }) => {
   const [show, setShow] = useState(notLogged);
   const [userLogged, setUserLogged] = useState(
-    JSON.parse(localStorage.getItem('userLogged'))
+    JSON.parse(localStorage.getItem("userLogged"))
   );
 
   useEffect(() => {
@@ -13,15 +13,15 @@ const Header = ({ notLogged }) => {
   }, [notLogged]);
 
   const username = () => {
-    return userLogged ? userLogged.username : '';
+    return userLogged ? userLogged.username : "";
   };
 
   const id = () => {
-    return userLogged ? userLogged.id : '';
+    return userLogged ? userLogged.id : "";
   };
 
   const logout = () => {
-    localStorage.removeItem('userLogged');
+    localStorage.removeItem("userLogged");
     setShow(true);
   };
 
@@ -29,7 +29,7 @@ const Header = ({ notLogged }) => {
     <nav className="header navbar navbar-expand-lg navbar-light bg-white px-1 px-sm-4">
       <div className="container-fluid px-0">
         <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="logo" height={60 + 'px'} />
+          <img src={Logo} alt="logo" height={60 + "px"} />
         </Link>
         <button
           className="navbar-toggler"
@@ -79,7 +79,7 @@ const Header = ({ notLogged }) => {
             {!show && (
               <>
                 <li className="nav-item d-flex align-items-center fs-5 fw-bold">
-                  <Link to="/novo-servico" className="nav-link">
+                  <Link to="cadastrarservico/" className="nav-link">
                     Cadastrar Serviço
                   </Link>
                 </li>
